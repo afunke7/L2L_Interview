@@ -26,7 +26,12 @@ SECRET_KEY = '8d^qo$f_n27u%$-8$nh8s8kx+cxz_)1nxhlthc(&@v^guy)z8h'
 DEBUG = True
 
 from socket import gethostname, gethostbyname
-ALLOWED_HOSTS = [gethostname(), gethostbyname(gethostname()), 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = [
+    gethostname(),
+    gethostbyname(gethostname()),
+    'localhost',
+    '0.0.0.0',
+]
 
 
 # Application definition
@@ -77,8 +82,12 @@ WSGI_APPLICATION = 'testsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'l2lDB',
+        'USER': 'l2ladmin',
+        'PASSWORD': 'password123',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
